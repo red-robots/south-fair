@@ -20,6 +20,7 @@ $fdate = $date->format('Y-m-d H:i:s');
 define('WP_CURRENT_TIME', $fdate);
 define('THEMEURI',get_template_directory_uri() . '/');
 
+
 function bellaworks_body_classes( $classes ) {
     // Adds a class of group-blog to blogs with more than 1 published author.
    global $post;
@@ -625,14 +626,16 @@ function copyImage($url) {
     }
 }
 
-
-
-// function get_events_list() {
-// 	global $wpdb;
-// 	$now = WP_CURRENT_TIME;
-// 	$query = "SELECT p.* FROM ".$wpdb->prefix."posts p WHERE p.post_type='events' AND p.post_status='publish'";
-// }
-
+/* Change 'Add Title' placeholder on input (post title) */
+if( is_admin() ) {
+  add_filter( 'enter_title_here', function( $input ) {
+    if( 'team' === get_post_type() ) {
+      return __( 'Enter Name', 'textdomain' );
+    } else {
+      return $input;
+    }
+  });
+}
 
 add_action('wp_footer', 'bellaworks_script_footer'); 
 function bellaworks_script_footer() { 
