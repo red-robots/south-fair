@@ -22,7 +22,7 @@ function my_login_logo() {
   $logo_url = ($logoImg) ? $logoImg[0] : ''; ?>
   <style type="text/css">
     body.login {
-      background-color: #3d5588;
+      background-color: #efefef;
     }
     <?php if($custom_logo_id) { ?>
     body.login div#login h1 a {
