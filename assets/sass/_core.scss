@@ -473,7 +473,7 @@ h6 {font-size: 28px;}
 }
 
 #menu-toggle {
-  display: block;
+  display: none;
   width: 50px;
   height: 50px;
   position: absolute;
@@ -510,6 +510,9 @@ h6 {font-size: 28px;}
   }
 }
 @media screen and (max-width: 960px) {
+  #menu-toggle {
+    display: block;
+  }
   .site-header {
     .wrapper {
       padding-left: 30px;

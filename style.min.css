@@ -1409,7 +1409,7 @@ h6{font-size:28px}
 .section_two_column_slant_style.image-right.half .columns{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
 .section_two_column_slant_style.image-right.half .textcol .skew{display:block;width:50%;height:100%;position:absolute;top:0;right:-10%;background:red;-webkit-transform:skew(-15deg);transform:skew(-15deg);border-right:20px solid #fff}
 .section_two_column_slant_style.image-left.half .textcol .skew{display:block;width:50%;height:100%;position:absolute;top:0;left:-10%;background:red;-webkit-transform:skew(-15deg);transform:skew(-15deg);border-left:20px solid #fff}
-#menu-toggle{display:block;width:50px;height:50px;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:25px}
+#menu-toggle{display:none;width:50px;height:50px;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);right:25px}
 #menu-toggle span.bar{position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);z-index:2;width:72%}
 #menu-toggle span.bar,#menu-toggle span.bar:before,#menu-toggle span.bar:after{display:block;height:4px;background:#0f6f39}
 #menu-toggle span.bar:before,#menu-toggle span.bar:after{content:"";width:100%;position:absolute;left:0}
@@ -1419,6 +1419,7 @@ h6{font-size:28px}
 }@media screen and (max-width:960px){.section_hero_static .textcol{width:50%}
 .section_two_column_image_text .textcol .inner{padding:30px}
 .section_two_column_slant_style .textcol .inner{padding:30px}
+#menu-toggle{display:block}
 .site-header .wrapper{padding-left:30px;padding-right:30px}
 .site-header .site-logo{padding:5px 0;width:130px}
 .site-header .site-logo a,.site-header .site-logo img{display:block;width:100%;height:auto}
