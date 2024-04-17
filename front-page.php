@@ -132,6 +132,39 @@
             </div>
           </section>
           <?php } ?>
+        <?php } 
+
+        else if( get_row_layout() == 'fullwidth_content' ) { 
+          $icon = get_sub_field('icon'); 
+          $text = get_sub_field('textcontent'); 
+          $button = get_sub_field('button'); 
+          $btnLink = (isset($button['url']) && $button['url']) ? $button['url'] : '';
+          $btnTitle = (isset($button['title']) && $button['title']) ? $button['title'] : '';
+          $btnTarget = (isset($button['target']) && $button['target']) ? $button['target'] : '_self';
+          $textcolor = (get_sub_field('textcolor')) ? get_sub_field('textcolor') : '#FFF'; 
+          $bgcolor = (get_sub_field('bgcolor')) ? get_sub_field('bgcolor') : '#CCC'; 
+          if($text) { ?>
+            <section id="section_fullwidth_content_<?php echo $i?>" class="repeatable_section section_fullwidth_content" style="background-color:<?php echo $bgcolor ?>;color:<?php echo $textcolor ?>;">
+              <div class="wrapper">
+                <div class="flexwrap">
+                  <div class="textcol">
+                    <?php if ($icon) { ?>
+                     <div class="section-icon">
+                        <span style="background-image:url('<?php echo $icon['url'] ?>')"></span>
+                     </div> 
+                    <?php } ?>
+                    <div class="text"><?php echo $text ?></div>
+                    <?php if($btnLink  && $btnTitle) { ?>
+                    <div class="button-wrap">
+                      <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button <?php echo $button_bgcolor; ?>"><?php echo $btnTitle ?></a>
+                    </div>
+                    <?php } ?>
+                  </div>
+                </div>
+                
+              </div>
+            </section>
+          <?php } ?>
         <?php } ?>
 
       <?php $i++; endwhile; ?>
