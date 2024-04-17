@@ -143,6 +143,7 @@
           $btnTarget = (isset($button['target']) && $button['target']) ? $button['target'] : '_self';
           $textcolor = (get_sub_field('textcolor')) ? get_sub_field('textcolor') : '#FFF'; 
           $bgcolor = (get_sub_field('bgcolor')) ? get_sub_field('bgcolor') : '#CCC'; 
+          $button_bgcolor = get_sub_field('button_bgcolor'); 
           if($text) { ?>
             <section id="section_fullwidth_content_<?php echo $i?>" class="repeatable_section section_fullwidth_content" style="background-color:<?php echo $bgcolor ?>;color:<?php echo $textcolor ?>;">
               <div class="wrapper">

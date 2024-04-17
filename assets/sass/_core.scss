@@ -200,6 +200,17 @@ h6 {font-size: 28px;}
       color: $primary;
     }
 
+    &.darkblue {
+      background: $secondary;
+      color: #FFF;
+      &:hover, &:focus {
+        background: $primary;
+        // box-shadow: 5px 8px 15px rgba(19,84,47,.95);
+        box-shadow: 5px 8px 15px rgba(7,112,66,.2);
+        color: #FFF;
+      }
+    }
+
     &.white {
       background: #FFF;
       color: $primary;
