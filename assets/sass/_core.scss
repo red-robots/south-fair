@@ -138,6 +138,14 @@ h6 {font-size: 28px;}
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
+
+  ul.menu-wrapper li.current-menu-item > a,
+  ul.menu-wrapper li.current_page_item > a,
+  ul.menu-wrapper > li:hover > a,
+  ul.menu-wrapper > li > a:hover,
+  ul.menu-wrapper > li > a:focus {
+    color: $primary;
+  }
 }
 
 .repeatable_section {
@@ -549,6 +557,17 @@ h6 {font-size: 28px;}
   }
   span.bar:after {
     top: 10px;
+  }
+}
+
+body:not(.home) {
+  #main {
+    max-width: $wrapper;
+    width: 100%;
+    min-height: 30em;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
