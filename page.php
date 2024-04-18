@@ -11,20 +11,27 @@
  *
  * @package bellaworks
  */
+global $heroImg;
 get_header(); 
 ?>
 
-<div id="primary" class="content-area-full generic-layout">
+<div id="primary" class="content-area-full generic-layout subpage-content">
 	<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-      <?php if(!has_post_thumbnail()) { ?>
-      <h1 class="page-title"><span><?php the_title(); ?></span></h1>
+
+      <?php if( have_rows('flexible_content') ) {  ?>
+        <?php get_template_part('parts/repeatable-blocks') ?>
+      <?php } else { ?>
+
+        <?php if (!$heroImg) { ?>
+          <h1 class="page-title"><span><?php the_title(); ?></span></h1>
+        <?php } ?>
+        
+        <div class="entry-content">
+          <?php the_content(); ?>
+        </div>  
       <?php } ?>
-			
-      <div class="entry-content">
-        <?php the_content(); ?>
-      </div>  
 
 		<?php endwhile; ?>
 

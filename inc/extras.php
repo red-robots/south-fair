@@ -648,7 +648,7 @@ function bella_acf_input_admin_footer() { ?>
 (function($) {
   acf.add_filter('color_picker_args', function( args, $field ){
     // do something to args
-    args.palettes = ['#0F6F39','#0E1329','#F26522','#FEBC11','#FAF1DB','#ed5e6b','#00B2CD']
+    args.palettes = ['#0F6F39','#0E1329','#F26522','#FEBC11','#ed5e6b','#FFFFFF','#808184']
     return args;
   });
 })(jQuery); 
@@ -657,3 +657,8 @@ function bella_acf_input_admin_footer() { ?>
 }
 add_action('acf/input/admin_footer', 'bella_acf_input_admin_footer');
 
+
+function page_has_hero() {
+  $hero = get_field('hero_image');
+  return ($hero) ? $hero : false;
+}
