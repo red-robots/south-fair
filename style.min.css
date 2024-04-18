@@ -1396,7 +1396,7 @@ h6{font-size:28px}
 .section_two_column_slant_style .textcol{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;overflow:visible}
 .section_two_column_slant_style .textcol .inner{width:100%;padding:5vw;text-align:center;position:relative;z-index:5}
 .section_two_column_slant_style .section-icon{text-align:center;margin-bottom:45px}
-.section_two_column_slant_style .section-icon span{display:inline-block;width:52px;height:52px;background-size:contain;background-position:center;background-repeat:no-repeat}
+.section_two_column_slant_style .section-icon span{display:inline-block;width:60px;height:60px;background-size:contain;background-position:center;background-repeat:no-repeat}
 .section_two_column_slant_style .section-text h2,.section_two_column_slant_style .section-text h3{font-size:1.35rem;font-weight:500;letter-spacing:.1em;margin:0 0 20px}
 .section_two_column_slant_style.half .imagecol,.section_two_column_slant_style.half .textcol{width:50%}
 .section_two_column_slant_style.image-right.half .columns{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
@@ -1425,6 +1425,9 @@ body:not(.home) #main{max-width:1400px;width:100%;min-height:30em;margin:0 auto;
 .site-footer .socialMedia{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .site-footer .socialMedia a{display:inline-block;color:#6d6e70;font-size:26px;margin:5px 5px}
 @media screen and (min-width:1281px){.section_hero_static .textcol .inner{padding:5vw}
+}@media screen and (max-width:1024px){.site-footer .flexwrap{-ms-flex-wrap:wrap;flex-wrap:wrap}
+.site-footer .flexwrap .footcol{width:100% !important;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.site-footer .flexwrap .branches .branch{text-align:center}
 }@media screen and (max-width:960px){.section_hero_static .textcol{width:50%}
 .section_two_column_image_text .textcol .inner{padding:30px}
 .section_two_column_slant_style .textcol .inner{padding:30px}

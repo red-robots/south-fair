@@ -35,7 +35,11 @@ function my_login_logo() {
     <?php } ?>
     body.login #backtoblog a, 
     body.login #nav a {
-      color: #f1f1cb!important;
+      color: #0F6F39!important;
+    }
+    body.login #backtoblog a:hover, 
+    body.login #nav a:hover {
+      color: #0FA852!important;
     }
     .login #backtoblog, .login #nav {
       text-align: center;
