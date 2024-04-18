@@ -40,6 +40,8 @@ $featImg = wp_get_attachment_image_src($thumbId,'full'); ?>
         <?php if ( has_custom_logo() ) { ?>
           <div class="site-logo"><?php the_custom_logo(); ?></div>
         <?php } ?>
+
+        <a href="#" id="menu-toggle" class="menu-toggle" aria-label="Menu Toggle"><span class="sr">Menu</span><span class="bar"></span></a>
         <nav id="site-navigation" class="main-navigation" role="navigation">
           <?php
           wp_nav_menu(
@@ -53,7 +55,6 @@ $featImg = wp_get_attachment_image_src($thumbId,'full'); ?>
           );
           ?>
         </nav>
-        <a href="#" id="menu-toggle" class="menu-toggle" aria-label="Menu Toggle"><span class="sr">Menu</span><span class="bar"></span></a>
         <div class="navOverlay"></div>
       </div>
     </div>
