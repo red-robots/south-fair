@@ -533,6 +533,105 @@ h6 {font-size: 28px;}
   }
 }
 
+
+.section_two_column_slant_alltext {
+  .columns {
+    .textcol {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 50px 5vw;
+      @media screen and (max-width: 1024px) {
+        padding: 40px 30px;
+      }
+      h2,h3 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0 0 15px;
+      }
+      .inner {
+        position: relative;
+        z-index: 8;
+      }
+
+      &.column1 {
+        z-index: 5;
+        background-color: transparent;
+        .slant {
+          position: absolute;
+          top: 0;
+          right: -15%;
+          width: 100%;
+          height: 100%;
+          transform: skew(-20deg);
+          z-index: 2;
+        }
+        .bgcolor {
+          display: block;
+          width: 75%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      &.column2 {
+        padding-left: 8vw;
+        padding-right: 2vw;
+        @media screen and (max-width: 1024px) {
+          padding-left: 50px;
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .columns {
+      .textcol.column1 {
+        width: 40%!important;
+      }
+      .textcol.column2 {
+        width: 60%!important;
+      }
+      .textcol.column1 {
+        .slant {
+          right: -25%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 980px) {
+    .columns .textcol.column2 {
+      padding-left: 18vw;
+      padding-right: 20px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .columns .textcol.column1,
+    .columns .textcol.column2 {
+      width: 100%!important;
+    }
+    .columns .textcol.column1 {
+      .bgcolor {
+        width: 100%!important;
+      }
+      .slant {
+        display: none!important;
+      }
+    }
+    .columns .textcol.column2 {
+      padding: 30px 30px!important;
+    }
+  }
+}
+
 #menu-toggle {
   display: none;
   width: 50px;
@@ -720,7 +819,7 @@ body.has-hero-image {
     .textcol h2 {
       margin: 0 0 20px;
       font-size: 2.5rem;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.2;
     }
   }
