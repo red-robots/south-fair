@@ -1452,7 +1452,7 @@ body.has-hero-image.logged-in.admin-bar .site-header{top:35px}
 .section_two_column_slant_alltext .columns .textcol.column1 .slant{right:-25%}
 }@media screen and (max-width:1100px){.subpage-content .section_fullwidth_content .textcol{max-width:100%;padding-left:10px;padding-right:10px}
 }@media screen and (max-width:1024px){.section_two_column_slant_alltext .columns .textcol{padding:40px 30px}
-.section_two_column_slant_alltext .columns .textcol.column2{padding-left:50px;padding-right:30px}
+.section_two_column_slant_alltext .columns .textcol.column2{padding-left:18vw;padding-right:30px}
 .site-footer .flexwrap{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .site-footer .flexwrap .footcol{width:100% !important;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .site-footer .flexwrap .branches .branch{text-align:center}
