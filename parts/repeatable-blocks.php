@@ -35,7 +35,11 @@
     <?php } 
 
     else if( get_row_layout() == 'two_column_image_text' ) { 
-      $title = get_sub_field('title'); 
+      //$title = get_sub_field('title'); 
+      $text_alignment = get_sub_field('text_alignment'); 
+      if(empty($text_alignment)) {
+        $text_alignment = 'center';
+      }
       $text = get_sub_field('text'); 
       $button = get_sub_field('button'); 
       $btnLink = (isset($button['url']) && $button['url']) ? $button['url'] : '';
@@ -62,14 +66,11 @@
             <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>">
           </figure> 
           <?php } ?>
-          <?php if ($title || $text) { ?>
-          <div class="textcol" style="color:<?php echo $textcolor ?>">
+          <?php if ($text) { ?>
+          <div class="textcol text-<?php echo $text_alignment ?>" style="color:<?php echo $textcolor ?>">
             <div class="inner">
-              <?php if ($title) { ?>
-               <!-- <h2 class="section-title"><?php //echo $title ?></h2>  -->
-              <?php } ?>
               <?php if ($text) { ?>
-               <div class="section-text"><?php echo $text ?></h2> 
+               <div class="section-text"><?php echo anti_email_spam($text) ?></h2> 
               <?php } ?>
               <?php if($btnLink  && $btnTitle) { ?>
               <div class="button-wrap">
@@ -123,7 +124,7 @@
                <h2 class="section-title"><?php echo $title ?></h2> 
               <?php } ?>
               <?php if ($text) { ?>
-               <div class="section-text"><?php echo $text ?></h2> 
+               <div class="section-text"><?php echo anti_email_spam($text) ?></h2> 
               <?php } ?>
               <?php if($btnLink  && $btnTitle) { ?>
               <div class="button-wrap">
@@ -179,7 +180,7 @@
             <span class="bgcolor" style="background-color:<?php echo $bgcolor ?>;"></span>
             <span class="slant" style="background-color:<?php echo $bgcolor ?>;"></span>
             <div class="inner">
-              <?php echo $text ?>
+              <?php echo anti_email_spam($text) ?>
               <?php if($btnLink  && $btnTitle) { ?>
               <div class="button-wrap">
                 <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button <?php echo $button_bgcolor; ?>"><?php echo $btnTitle ?></a>
@@ -191,7 +192,7 @@
           <?php if ($text2) { ?>
           <div class="textcol column2" style="background-color:<?php echo $bgcolor2 ?>;color:<?php echo $textcolor2 ?>;<?php echo $width2; ?>">
             <div class="inner">
-              <?php echo $text2 ?>
+              <?php echo anti_email_spam($text2) ?>
               <?php if($btnLink2  && $btnTitle2) { ?>
               <div class="button-wrap">
                 <a href="<?php echo $btnLink2 ?>" target="<?php echo $btnTarget2 ?>" class="button <?php echo $button_bgcolor2; ?>"><?php echo $btnTitle2 ?></a>
@@ -206,6 +207,10 @@
     <?php } 
 
     else if( get_row_layout() == 'fullwidth_content' ) { 
+      $text_alignment = get_sub_field('text_alignment'); 
+      if(empty($text_alignment)) {
+        $text_alignment = 'center';
+      }
       $icon = get_sub_field('icon'); 
       $text = get_sub_field('textcontent'); 
       $button = get_sub_field('button'); 
@@ -219,13 +224,13 @@
         <section id="section_fullwidth_content_<?php echo $i?>" class="repeatable_section section_fullwidth_content" style="background-color:<?php echo $bgcolor ?>;color:<?php echo $textcolor ?>;">
           <div class="wrapper">
             <div class="flexwrap">
-              <div class="textcol">
+              <div class="textcol text-<?php echo $text_alignment ?>">
                 <?php if ($icon) { ?>
                  <div class="section-icon">
                     <span style="background-image:url('<?php echo $icon['url'] ?>')"></span>
                  </div> 
                 <?php } ?>
-                <div class="text"><?php echo $text ?></div>
+                <div class="text"><?php echo anti_email_spam($text) ?></div>
                 <?php if($btnLink  && $btnTitle) { ?>
                 <div class="button-wrap">
                   <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button <?php echo $button_bgcolor; ?>"><?php echo $btnTitle ?></a>
@@ -236,6 +241,21 @@
             
           </div>
         </section>
+      <?php } ?>
+    <?php } 
+
+    else if( get_row_layout() == 'shortcode_section' ) { 
+      $shortcode = get_sub_field('shortcode');
+      $section_title = get_sub_field('section_title');
+      if( $shortcode && do_shortcode($shortcode) ) { ?>
+      <section id="section_shortcode_content_<?php echo $i?>" class="repeatable_section section_shortcode_content">
+        <?php if ($section_title) { ?>
+         <div class="titlediv wrapper">
+           <h2 class="section-title"><?php echo $section_title ?></h2>
+         </div> 
+        <?php } ?>
+        <?php echo do_shortcode($shortcode); ?>
+      </section>
       <?php } ?>
     <?php } ?>
 

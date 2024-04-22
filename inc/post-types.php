@@ -206,7 +206,7 @@ function custom_post_column( $column, $post_id ) {
             $img_src = ($img) ? $img['sizes']['medium'] : '';
             $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;border:1px solid #CCC;overflow:hidden;">';
             if($img_src) {
-               $the_photo .= '<span style="display:block;width:100%;height:100%;background:url('.$img_src.') top center no-repeat;background-size:cover;transform:scale(1.2)"></span>';
+               $the_photo .= '<span style="display:block;width:100%;height:100%;background-image:url('.$img_src.');background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.2)"></span>';
             } else {
                 $the_photo .= '<i class="dashicons dashicons-format-image" style="font-size:25px;position:relative;top:13px;left: -3px;opacity:0.3;"></i>';
             }

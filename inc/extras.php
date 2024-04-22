@@ -254,24 +254,6 @@ add_action( 'init', 'remove_pages_editor' );
 // }
 
 
-add_shortcode( 'featured_story', 'featured_story_func' );
-function featured_story_func( $atts ) {
-  global $wpdb;
-  $query = "SELECT p.*, pm.post_id, pm.meta_id FROM ".$wpdb->prefix."posts p, ".$wpdb->prefix."postmeta pm WHERE p.ID=pm.post_id AND p.post_status='publish' AND p.post_type='post' AND pm.meta_key='featured_story' AND pm.meta_value='1'";
-  $result = $wpdb->get_row($query);
-  $output = '';
-//   print_r($result);
-
-  if($result) {
-    $postid = $result->post_id;
-    ob_start();
-    include( locate_template('parts/featured_story.php') ); 
-    $output = ob_get_contents();
-    ob_end_clean();
-  }
-  return $output;
-}
-
 
 add_shortcode( 'recent_news', 'recent_news_func' );
 function recent_news_func( $atts ) {
@@ -301,34 +283,20 @@ function newsfeeds_func( $atts ) {
   return $output;
 }
 
-add_shortcode( 'events-feeds', 'events_feeds_func' );
-function events_feeds_func( $atts ) {
+add_shortcode( 'display_team', 'display_team_func' );
+function display_team_func( $atts ) {
   $a = shortcode_atts( array(
-    'perpage' => 3,
+    'show' => 3,
   ), $atts );
-  $perpage = (isset($a['perpage']) && $a['perpage']) ? $a['perpage'] : 3;
+  $perpage = (isset($a['show']) && $a['show']) ? $a['show'] : 3;
   $output = '';
   ob_start();
-  include( locate_template('parts/events-feeds.php') ); 
+  include( locate_template('parts/team-list.php') ); 
   $output = ob_get_contents();
   ob_end_clean();
   return $output;
 }
 
-
-add_shortcode( 'eventsfeeds', 'eventsfeeds_func' );
-function eventsfeeds_func( $atts ) {
-  $a = shortcode_atts( array(
-    'perpage' => 3,
-  ), $atts );
-  $perpage = (isset($a['perpage']) && $a['perpage']) ? $a['perpage'] : 3;
-  $output = '';
-  ob_start();
-  include( locate_template('parts/events-feeds.php') ); 
-  $output = ob_get_contents();
-  ob_end_clean();
-  return $output;
-}
 
 
 

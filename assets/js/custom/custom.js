@@ -18,6 +18,43 @@ jQuery(document).ready(function ($) {
     $('#menu-toggle').trigger('click');
   });
 
+
+  //About > Team section
+  $(document).on('click','.popupinfo', function(e){
+    e.preventDefault();
+    var d = new Date();
+    var pagelink = $(this).attr('data-link');
+    $('body').addClass('modal-open');
+    $('#loaderContainer').addClass('show');
+    $('#popupContent').load(pagelink+'?t='+d.getTime()+' #main .team-info', function(){
+      setTimeout(function(){
+        $('.popupContainer').addClass('show');
+        $('#loaderContainer').removeClass('show');
+      },600);
+    });
+  });
+
+  $(document).on('click','.close-popup', function(e){
+    hidePopUp();
+  });
+
+  $(document).on('keydown', function(e){
+    //Escape key
+    if(e.keyCode==27) {
+      if( $('.popupContainer.show').length ) {
+        hidePopUp();
+      }
+    }
+  });
+
+  function hidePopUp() {
+    $('.popupContainer .popupInner').removeClass('fadeInDown').addClass('zoomOut');
+    setTimeout(function(){
+      $('.popupContainer').removeClass('show');
+      $('.popupContainer .popupInner').removeClass('zoomOut').addClass('fadeInDown');
+    },600);
+  }
+
 }); 
 
 
