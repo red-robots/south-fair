@@ -167,12 +167,14 @@ function set_custom_cpt_columns($columns) {
     if($post_type=='team') {
         unset($columns['date']);
         $columns['title'] = __( 'Name', 'bellaworks' );
+        $columns['jobtitle'] = __( 'Job Title', 'bellaworks' );
         $columns['image'] = __( 'Image', 'bellaworks' );
         $columns['date'] = __( 'Date', 'bellaworks' );
     }
-    else if($post_type=='events') {
+    else if($post_type=='projects') {
         unset($columns['date']);
         $columns['title'] = __( 'Title', 'bellaworks' );
+        $columns['location'] = __( 'Location', 'bellaworks' );
         $columns['image'] = __( 'Featured Image', 'bellaworks' );
         $columns['date'] = __( 'Date', 'bellaworks' );
     }
@@ -201,6 +203,11 @@ function custom_post_column( $column, $post_id ) {
     
     if($post_type=='team') {
         switch ( $column ) {
+          case 'jobtitle' :
+            if( $job_title = get_field('job_title',$post_id) ) {
+              echo $job_title;
+            }
+            break;
           case 'image' :
             $img = get_field('photo',$post_id);
             $img_src = ($img) ? $img['sizes']['medium'] : '';
@@ -216,6 +223,30 @@ function custom_post_column( $column, $post_id ) {
         }
     }
 
+    else if($post_type=='projects') {
+      switch ( $column ) {
+        case 'location' :
+          if( $project_location = get_field('project_location',$post_id) ) {
+            echo $project_location;
+          }
+          break;
+
+        case 'image' :
+          $featured = get_field('featured_story',$post_id);
+          $thumbnail_id = get_post_thumbnail_id($post_id);
+          $img_src = wp_get_attachment_image_url($thumbnail_id);
+          $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;border:1px solid #CCC;overflow:hidden;">';
+          if($img_src) {
+             $the_photo .= '<span style="display:block;width:100%;height:100%;background-image:url('.$img_src.');background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.2)"></span>';
+          } else {
+              $the_photo .= '<i class="dashicons dashicons-format-image" style="font-size:25px;position:relative;top:13px;left: -3px;opacity:0.3;"></i>';
+          }
+          $the_photo .= '</span>';
+          echo $the_photo;
+          break;
+      }
+    }
+
     else if($post_type=='post') {
       switch ( $column ) {
         case 'featured' :
@@ -225,7 +256,7 @@ function custom_post_column( $column, $post_id ) {
           }
           break;
       }
-  }
+    }
     
 }
 
