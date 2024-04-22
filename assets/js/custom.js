@@ -47,6 +47,8 @@
  *  Date Modified: 04.18.2024
  */
 jQuery(document).ready(function ($) {
+  Fancybox.bind("[data-fancybox]", {// Custom options
+  });
   $(document).on('click', '#menu-toggle', function (e) {
     e.preventDefault();
     $(this).toggleClass('active');

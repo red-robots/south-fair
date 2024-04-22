@@ -298,6 +298,19 @@ function display_team_func( $atts ) {
 }
 
 
+add_shortcode( 'display_projects', 'display_projects_func' );
+function display_projects_func( $atts ) {
+  $a = shortcode_atts( array(
+    'show' => 3,
+  ), $atts );
+  $perpage = (isset($a['show']) && $a['show']) ? $a['show'] : 3;
+  $output = '';
+  ob_start();
+  include( locate_template('parts/project-list.php') ); 
+  $output = ob_get_contents();
+  ob_end_clean();
+  return $output;
+}
 
 
 // add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
