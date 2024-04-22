@@ -55,6 +55,7 @@ jQuery(document).ready(function ($) {
   function hidePopUp() {
     $('.popupContainer .popupInner').removeClass('fadeInDown').addClass('zoomOut');
     setTimeout(function(){
+      $('body').removeClass('modal-open');
       $('.popupContainer').removeClass('show');
       $('.popupContainer .popupInner').removeClass('zoomOut').addClass('fadeInDown');
     },600);
