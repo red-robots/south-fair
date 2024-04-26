@@ -1,67 +1,53 @@
 <?php
-$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $args = array(
   'posts_per_page'  => $perpage,
   'post_type'       => 'post',
-  'orderby'         => 'date',
-  'order'           => 'desc',
-  'post_status'     => 'publish',
-  'paged'			      => $paged
+  'post_status'     => 'publish'
 );
-$news = new WP_Query($args);
-if ( $news->have_posts() ) {  
-  $rpcount = $news->found_posts;
-  ?>
-  <div class="newsfeeds-wrapper">
-    <div class="news">
-      <?php $i=1; while ( $news->have_posts() ) : $news->the_post();  
-        $img = get_field('thumbnail_image');
-        $imageUrl = ($img) ? $img['url'] : '';
-        $imgAlt = ($img) ? $img['title'] : '';
-        $content = get_the_content();
-        $content = ($content) ? strip_tags(strip_shortcodes($content))  : '';
-        $excerpt = ($content) ? shortenText( $content, 600, ".", "...") : "";
+$entries = new WP_Query($args);
+if ( $entries->have_posts() ) {  $count = $entries->found_posts; ?>
+<div class="projects-wrapper" data-count="<?php echo $count ?>">
+  <div class="wrapper">
+    <div class="flexwrap">
+      <?php $ctr=1; while ( $entries->have_posts() ) : $entries->the_post();  
+        $project_location = get_field('project_location');
+        $project_name = get_the_title();
+        $pagelink = get_permalink();
+        $thumbnail_id = get_post_thumbnail_id($post_id);
+        $photo = wp_get_attachment_image_url($thumbnail_id,'full');
+        if(!$photo) {
+          $photo = get_template_directory_uri() . '/images/image-not-available.jpg';
+        }
         ?>
-        <article class="post-item">
-          <div class="inside">
-            <div class="textcol fxcol">
-              <h2 class="post-title"><?php echo get_the_title()?></h2>
-              <div class="excerpt"><?php echo $excerpt ?></div>
-              <div class="readmore"><a href="<?php echo get_permalink() ?>" class="morelink">Read More</a></div>
-            </div>
-
-            <figure class="imagecol fxcol">
-              <?php if($imageUrl) { ?>
-                <a href="<?php echo get_permalink() ?>">
-                  <img src="<?php echo $imageUrl?>" alt="<?php echo $imgAlt?>" class="post-image" />
-                  <img src="<?php echo get_stylesheet_directory_uri()?>/assets/img/square.png" alt="" class="resizer" />
-                </a>
-              <?php } else { ?>
-                <img src="<?php echo get_stylesheet_directory_uri()?>/assets/img/square.png" alt="" />
-              <?php } ?>
-            </figure>
-          </div>
-        </article>
-      <?php $i++; endwhile; wp_reset_postdata(); ?>
+        <figure data-group="project-group-<?php echo $ctr ?>" class="photo <?php echo ($photo) ? 'has-photo':'no-photo' ?>">
+          <a href="<?php echo $photo ?>" class="imglink inner" data-fancybox="project-group-<?php echo $ctr ?>">
+            <?php if ($photo) { ?>
+             <img src="<?php echo $photo ?>" alt="<?php echo $project_name ?>"> 
+            <?php } ?>
+            <figcaption>
+              <div class="info excerpt-content">
+                <span class="project_name"><?php echo $project_name ?></span>
+                <?php if (  get_the_excerpt() ) { ?>
+                <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+                <?php } ?>
+              </div>
+              <!-- <span class="plus-symbol"></span> -->
+            </figcaption>
+          </a>
+        </figure>
+        <?php if( $gallery = get_field('gallery') ) { ?>
+        <div data-group="project-group-<?php echo $ctr ?>" class="project-gallery__group" style="display:none;">
+          <?php foreach ($gallery as $img) { 
+            if($photo!=$img['url']) { ?>
+            <a href="<?php echo $img['url'] ?>" class="image-inner fancybox" data-fancybox="project-group-<?php echo $ctr ?>">
+                <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
+              </a>
+            <?php } ?>
+          <?php } ?>
+        </div>
+        <?php } ?>
+      <?php $ctr++; endwhile; wp_reset_postdata(); ?>
     </div>
-
-    <?php
-    $total_pages = $news->max_num_pages;
-    if ($total_pages > 1) { ?>
-    <div id="pagination" class="pagination-wrapper clear">
-      <?php
-      $pagination = array(
-          'base' => @add_query_arg('pg','%#%'),
-          'format' => '?paged=%#%',
-          'current' => $paged,
-          'total' => $total_pages,
-          'prev_text' => __( '&laquo;', 'red_partners' ),
-          'next_text' => __( '&raquo;', 'red_partners' ),
-          'type' => 'plain'
-      );
-      echo paginate_links($pagination);
-      ?>
-    </div>
-    <?php } ?>
   </div>
-<?php } ?>
+</div>
+<?php }

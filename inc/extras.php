@@ -312,6 +312,21 @@ function display_projects_func( $atts ) {
   return $output;
 }
 
+add_shortcode( 'display_news', 'display_news_func' );
+function display_news_func( $atts ) {
+  $a = shortcode_atts( array(
+    'show' => 3,
+  ), $atts );
+  $perpage = (isset($a['show']) && $a['show']) ? $a['show'] : -1;
+  $output = '';
+  ob_start();
+  include( locate_template('parts/news-feeds.php') ); 
+  $output = ob_get_contents();
+  ob_end_clean();
+  return $output;
+}
+
+
 
 // add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 // function my_wp_nav_menu_objects( $items, $args ) {
