@@ -1342,7 +1342,7 @@ button.swiper-pagination-bullet{border:0;margin:0;padding:0;-webkit-box-shadow:n
 @font-face{font-family:"Avenir";src:url("assets/fonts/avenir/Avenir-BlackOblique.woff") format("woff"),url("assets/fonts/avenir/Avenir-BlackOblique.eot") format("eot");font-weight:700;font-style:italic;font-display:swap}
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;-webkit-hyphens:none;hyphens:none;page-break-inside:avoid}
 html,body,*,::before,::after{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
-p{font-size:1rem;letter-spacing:.03em;line-height:1.7}
+p{font-size:1.15rem;letter-spacing:.03em;line-height:1.7}
 b,strong{font-weight:600}
 a,input,button,textarea{-webkit-transition:all ease .3s;transition:all ease .3s}
 a{color:#0f6f39}
