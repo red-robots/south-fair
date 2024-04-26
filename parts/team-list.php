@@ -15,12 +15,12 @@ if ( $entries->have_posts() ) {  $count = $entries->found_posts; ?>
         $bio = get_field('bio');
         $name = get_the_title();
         $pagelink = get_permalink();
+        $placeholder = get_template_directory_uri() . '/assets/img/photo-coming-soon.jpg';
+        $photoUrl = ($photo) ? $photo['url'] : $placeholder;
         ?>
         <figure class="photo <?php echo ($photo) ? 'has-photo':'no-photo' ?>">
           <a href="javascript:void(0)" data-link="<?php echo $pagelink ?>" class="inner popupinfo">
-            <?php if ($photo) { ?>
-             <img src="<?php echo $photo['url'] ?>" alt="<?php echo $name ?>"> 
-            <?php } ?>
+            <img src="<?php echo $photoUrl ?>" alt="<?php echo ($photo) ? $name : '' ?>"> 
             <figcaption>
               <div class="info">
                 <span class="name"><?php echo $name ?></span>

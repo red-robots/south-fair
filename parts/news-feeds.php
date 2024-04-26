@@ -16,7 +16,7 @@ if ( $entries->have_posts() ) {  $count = $entries->found_posts; ?>
         $thumbnail_id = get_post_thumbnail_id($post_id);
         $photo = wp_get_attachment_image_url($thumbnail_id,'full');
         if(!$photo) {
-          $photo = get_template_directory_uri() . '/images/photo-coming-soon.jpg';
+          $photo = get_template_directory_uri() . '/assets/img/photo-coming-soon.jpg';
         }
         ?>
         <figure data-group="project-group-<?php echo $ctr ?>" class="photo <?php echo ($photo) ? 'has-photo':'no-photo' ?>">
