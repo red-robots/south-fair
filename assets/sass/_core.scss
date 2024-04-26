@@ -952,12 +952,13 @@ body.single {
       display: block;
       text-decoration: none;
       position: relative;
-      padding-bottom: 96%;
+      // padding-bottom: 96%;
       overflow: hidden;
       background-color: #ececec;
-      @media screen and (max-width: 768px) {
-        padding-bottom: 100%;
-      }
+      padding-bottom: 70%;
+      // @media screen and (max-width: 768px) {
+      //   padding-bottom: 100%;
+      // }
     }
     figcaption {
       position: absolute;
