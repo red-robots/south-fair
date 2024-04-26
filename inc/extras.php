@@ -387,7 +387,7 @@ function ea_disable_editor( $id = false ) {
 add_filter( 'mce_buttons', 'myplugin_register_buttons' );
 
 function myplugin_register_buttons( $buttons ) {
-	array_push( $buttons, '|', 'custom_class');
+	array_push( $buttons,'edbutton1','edbutton2');
 
 	return $buttons;
 }
@@ -397,7 +397,9 @@ add_filter( 'mce_external_plugins', 'myplugin_register_tinymce_javascript' );
 
 function myplugin_register_tinymce_javascript( $plugin_array ) {
 
-   $plugin_array['checklistbutton'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
+   //$plugin_array['custombuttonelement'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
+   $plugin_array['BUTTON1'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
+   $plugin_array['BUTTON2'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
 
    return $plugin_array;
 }

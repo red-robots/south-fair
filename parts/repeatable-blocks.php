@@ -257,6 +257,59 @@
         <?php echo do_shortcode($shortcode); ?>
       </section>
       <?php } ?>
+    <?php } 
+
+    else if( get_row_layout() == 'flexible_columns' ) { 
+      $numcols = get_sub_field('numcols');
+      $cols = ($numcols) ? $numcols : 1;
+      if( have_rows('column_content') ) { ?>
+      <section id="section_flexible_columns_<?php echo $i?>" class="repeatable_section section_flexible_columns numcols_<?php echo $cols?>">
+        <div class="columns">
+        <?php $fn=$i; while( have_rows('column_content') ): the_row(); 
+
+          if( get_row_layout() == 'text_content') {
+            $text = get_sub_field('text');
+            $textcolor = get_sub_field('textcolor');
+            $bg_color = get_sub_field('bg_color');
+            $bg_image = get_sub_field('bg_image');
+            $bg_overlay = get_sub_field('bg_overlay');
+            $styles = '';
+            $sec_class = '';
+            if($textcolor) {
+              $styles = 'color:'.$textcolor.';';
+            }
+            if($bg_color) {
+              $styles .= 'background-color:'.$bg_color.';';
+              $sec_class = ' has-bg-color';
+            }
+            if($bg_image) {
+              $sec_class .= ' has-bg-image';
+            }
+            if($bg_overlay) {
+              $sec_class .= ' has-bg-overlay';
+            }
+            
+            if($text) { ?>
+            <div class="flexcol textCol<?php echo $sec_class?>" style="<?php echo $styles?>">
+              <?php if ($bg_image) { ?>
+              <div class="background-image<?php echo ($bg_overlay) ? ' has-overlay':'' ?>" style="background-image:url('<?php echo $bg_image['url'] ?>');">
+                <?php if ($bg_overlay) { ?>
+                <div class="overlay" style="background-color:<?php echo $bg_overlay ?>"></div>
+                <?php } ?>
+              </div> 
+              <?php } ?>
+              <div class="inside">
+                <?php echo $text ?>
+              </div>
+            </div>
+            <?php } ?>
+
+          <?php } ?>
+
+        <?php $fn++; endwhile; ?>
+        </div>
+      </section>  
+      <?php } ?>
     <?php } ?>
 
   <?php $i++; endwhile; ?>
