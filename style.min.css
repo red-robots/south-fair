@@ -1379,6 +1379,7 @@ h6{font-size:28px}
 .repeatable_section a.link-white:hover,.repeatable_section a.link-white:focus{opacity:.5}
 .repeatable_section a.link-bright-green{color:#16d96b;text-decoration:underline}
 .repeatable_section a.link-bright-green:hover,.repeatable_section a.link-bright-green:focus{color:#8af8ba}
+.repeatable_section h3{font-weight:600}
 .repeatable_section .textcol .button{min-width:200px}
 .repeatable_section .columns{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;min-height:40rem}
 .repeatable_section .section-title{margin:0 0 20px}
