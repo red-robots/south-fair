@@ -299,7 +299,7 @@
               </div> 
               <?php } ?>
               <div class="inside">
-                <?php echo $text ?>
+                <?php echo anti_email_spam($text); ?>
               </div>
             </div>
             <?php } ?>

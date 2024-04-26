@@ -64,6 +64,20 @@
  *  Date Modified: 04.18.2024
  */
 jQuery(document).ready(function ($) {
+  $('.entries-container').infinitescroll({
+    // selector for the paged navigation (it will be hidden)
+    navSelector: "#pagination",
+    // selector for the NEXT link (to page 2)
+    nextSelector: "#pagination .next",
+    // selector for all items you'll retrieve
+    itemSelector: ".entry",
+    // finished message
+    loading: {
+      img: assetsUrl + 'img/loader.svg',
+      msgText: 'Loading new sets...',
+      finishedMsg: 'No more pages to load.'
+    }
+  });
   Fancybox.bind("[data-fancybox]", {// Custom options
   });
   $(document).on('click', '#menu-toggle', function (e) {
@@ -112,34 +126,3 @@ jQuery(document).ready(function ($) {
     }, 600);
   }
 });
-"use strict";
-
-(function () {
-  tinymce.PluginManager.add('BUTTON2', function (editor, url) {
-    //console.log(url);
-    var parts = url.split('assets');
-    var themeURL = parts[0]; // Add Button to Visual Editor Toolbar
-
-    editor.addButton('custom_class', {
-      title: 'Button',
-      cmd: 'custom_class',
-      image: themeURL + 'assets/img/button-white.png'
-    }); // Add Command when Button Clicked
-
-    editor.addCommand('custom_class', function () {
-      var selected_text = editor.selection.getContent();
-
-      if (selected_text.length === 0) {
-        alert('Please select some text.');
-        return;
-      }
-
-      var open_column = '<span class="custom-button-element green"><a data-mce-href="#" href="#"  data-mce-selected="inline-boundary" class="button-element">';
-      var close_column = '</a></span>';
-      var return_text = '';
-      return_text = open_column + selected_text + close_column;
-      editor.execCommand('mceReplaceContent', false, return_text);
-      return;
-    });
-  });
-})();

@@ -33,6 +33,7 @@ $featImg = wp_get_attachment_image_src($thumbId,'full'); ?>
   $heroImg = page_has_hero();
   $extraClass = ($heroImg) ? 'has-hero-image':'';
 ?>
+<script>var assetsUrl='<?php echo get_template_directory_uri();?>/assets/';</script>
 </head>
 <body <?php body_class($extraClass); ?>>
 

@@ -38,6 +38,12 @@ function bellaworks_scripts() {
   );
 
   wp_enqueue_script( 
+    'bellaworks-infinitescroll', 
+    get_template_directory_uri() . '/assets/js/vendor/jquery.infinitescroll.min.js', 
+    array(), '20120206', true 
+  );
+
+  wp_enqueue_script( 
     'bellaworks-custom', 
     get_template_directory_uri() . '/assets/js/custom/custom.js', 
     array(), '20230420', true 

@@ -301,9 +301,9 @@ function display_team_func( $atts ) {
 add_shortcode( 'display_projects', 'display_projects_func' );
 function display_projects_func( $atts ) {
   $a = shortcode_atts( array(
-    'show' => 3,
+    'show' => -1
   ), $atts );
-  $perpage = (isset($a['show']) && $a['show']) ? $a['show'] : 3;
+  $perpage = (isset($a['show']) && $a['show']) ? $a['show'] : -1;
   $output = '';
   ob_start();
   include( locate_template('parts/project-list.php') ); 
@@ -315,7 +315,7 @@ function display_projects_func( $atts ) {
 add_shortcode( 'display_news', 'display_news_func' );
 function display_news_func( $atts ) {
   $a = shortcode_atts( array(
-    'show' => 3,
+    'show' => -1
   ), $atts );
   $perpage = (isset($a['show']) && $a['show']) ? $a['show'] : -1;
   $output = '';

@@ -1,14 +1,18 @@
 <?php
+$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $args = array(
   'posts_per_page'  => $perpage,
   'post_type'       => 'post',
   'post_status'     => 'publish'
 );
+if($perpage>0) {
+  $args['paged'] = $paged;
+}
 $entries = new WP_Query($args);
 if ( $entries->have_posts() ) {  $count = $entries->found_posts; ?>
 <div class="projects-wrapper" data-count="<?php echo $count ?>">
   <div class="wrapper">
-    <div class="flexwrap">
+    <div class="flexwrap entries-container">
       <?php $ctr=1; while ( $entries->have_posts() ) : $entries->the_post();  
         $project_location = get_field('project_location');
         $project_name = get_the_title();
@@ -19,7 +23,7 @@ if ( $entries->have_posts() ) {  $count = $entries->found_posts; ?>
           $photo = get_template_directory_uri() . '/assets/img/photo-coming-soon.jpg';
         }
         ?>
-        <figure data-group="project-group-<?php echo $ctr ?>" class="photo <?php echo ($photo) ? 'has-photo':'no-photo' ?>">
+        <figure data-group="project-group-<?php echo $ctr ?>" class="entry photo <?php echo ($photo) ? 'has-photo':'no-photo' ?>">
           <a href="<?php echo $photo ?>" class="imglink inner" data-fancybox="project-group-<?php echo $ctr ?>">
             <?php if ($photo) { ?>
              <img src="<?php echo $photo ?>" alt="<?php echo $project_name ?>"> 
@@ -48,6 +52,26 @@ if ( $entries->have_posts() ) {  $count = $entries->found_posts; ?>
         <?php } ?>
       <?php $ctr++; endwhile; wp_reset_postdata(); ?>
     </div>
+
+    <?php
+    $total_pages = $entries->max_num_pages;
+    if ($total_pages > 1){  ?>
+      <div id="pagination" data-section="#blogs" class="pagination sr-only">
+          <?php
+              $pagination = array(
+                  'base' => @add_query_arg('pg','%#%'),
+                  'format' => '?paged=%#%',
+                  'mid-size' => 1,
+                  'current' => $paged,
+                  'total' => $total_pages,
+                  'prev_next' => True,
+                  'prev_text' => __( '<span class="fas fa-chevron-left"></span>' ),
+                  'next_text' => __( '<span class="fas fa-chevron-right"></span>' )
+              );
+              echo paginate_links($pagination);
+          ?>
+      </div>
+    <?php } ?>
   </div>
 </div>
 <?php }

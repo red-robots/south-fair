@@ -5,7 +5,22 @@
  */
 
 jQuery(document).ready(function ($) {
- 
+  
+  $('.entries-container').infinitescroll({
+      // selector for the paged navigation (it will be hidden)
+      navSelector  : "#pagination",
+      // selector for the NEXT link (to page 2)
+      nextSelector : "#pagination .next",
+      // selector for all items you'll retrieve
+      itemSelector : ".entry",
+      // finished message
+      loading: {
+              img: assetsUrl + 'img/loader.svg',
+              msgText: 'Loading new sets...',
+              finishedMsg: 'No more pages to load.'
+          }
+      }
+    );
 
   Fancybox.bind("[data-fancybox]", {
     // Custom options

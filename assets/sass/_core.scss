@@ -1355,6 +1355,21 @@ body.modal-open {
   }
 }
 
+#infscr-loading {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  img {
+    display: inline-block;
+    width: 60px;
+    height: auto;
+  }
+  div {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
 .site-footer {
   background: #E6E8EA;
   color: #000;
