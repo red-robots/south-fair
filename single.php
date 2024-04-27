@@ -56,7 +56,7 @@ get_header();
 
 	</main><!-- #main -->
 
-  <?php if($postType=='post' || $postType=='stories') { ?>
+  <?php if($postType=='post') { ?>
   <aside id="single-post-widget">
     <?php get_template_part('parts/recent-news-widget'); ?>
   </aside>

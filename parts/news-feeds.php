@@ -24,7 +24,7 @@ if ( $entries->have_posts() ) {  $count = $entries->found_posts; ?>
         }
         ?>
         <figure data-group="project-group-<?php echo $ctr ?>" class="entry photo <?php echo ($photo) ? 'has-photo':'no-photo' ?>">
-          <a href="<?php echo $photo ?>" class="imglink inner" data-fancybox="project-group-<?php echo $ctr ?>">
+          <a href="<?php echo $pagelink ?>" class="imglink inner">
             <?php if ($photo) { ?>
              <img src="<?php echo $photo ?>" alt="<?php echo $project_name ?>"> 
             <?php } ?>

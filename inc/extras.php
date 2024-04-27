@@ -660,3 +660,4 @@ function page_has_hero() {
   $hero = get_field('hero_image');
   return ($hero) ? $hero : false;
 }
+
