@@ -290,7 +290,7 @@ h6 {font-size: 28px;}
     position: absolute;
     top: 0;
     z-index: 5;
-    background: rgba(255,255,255,.8);
+    background: rgba(255,255,255,.63);
     color: #000;
     display: flex;
     flex-wrap: wrap;
@@ -301,12 +301,18 @@ h6 {font-size: 28px;}
       text-align: center;
       padding: 30px;
       p {
-        font-size: 1.8rem;
-        line-height: 2;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2.2;
+        letter-spacing: 0.16em;
         margin: 0 0 20px;
       }
       @media screen and (min-width: 1281px) {
         padding: 5vw;
+        p {
+          font-size: 2.2rem;
+          letter-spacing: 0.2em;
+        }
       }
     }
 

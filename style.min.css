@@ -1396,9 +1396,9 @@ h6{font-size:28px}
 .repeatable_section .custom-button-element.white a.button:hover,.repeatable_section .custom-button-element.white a.button:focus{background:#0f6f39;color:#fff}
 .section_hero_static .imagecol{margin:0;width:100%;position:relative}
 .section_hero_static .imagecol img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
-.section_hero_static .textcol{width:38%;height:100%;position:absolute;top:0;z-index:5;background:rgba(255,255,255,.8);color:#000;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.section_hero_static .textcol{width:38%;height:100%;position:absolute;top:0;z-index:5;background:rgba(255,255,255,.63);color:#000;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .section_hero_static .textcol .inner{width:100%;text-align:center;padding:30px}
-.section_hero_static .textcol .inner p{font-size:1.8rem;line-height:2;margin:0 0 20px}
+.section_hero_static .textcol .inner p{font-size:2rem;font-weight:500;line-height:2.2;letter-spacing:.16em;margin:0 0 20px}
 .section_hero_static .textcol .button-wrap{margin-top:8vw}
 .section_hero_static.text-right .textcol{right:0}
 .section_hero_static.text-left .textcol{left:0}
@@ -1560,6 +1560,7 @@ body.has-hero-image.logged-in.admin-bar .site-header{top:35px}
 .subpage-content .section_fullwidth_content .textcol.text-right{text-align:right}
 @media screen and (min-width:821px){.popupContainer .popupInner .team-info .rightcol{padding-top:30px}
 }@media screen and (min-width:1281px){.section_hero_static .textcol .inner{padding:5vw}
+.section_hero_static .textcol .inner p{font-size:2.2rem;letter-spacing:.2em}
 }@media screen and (min-width:1401px){.section_flexible_columns .flexcol .inside{padding:50px 5vw}
 }@media screen and (max-width:1500px){.subpage-content .section_fullwidth_content .textcol.text-left,.subpage-content .section_fullwidth_content .textcol.text-right{max-width:85vw}
 }@media screen and (max-width:1400px){.section_two_column_slant_alltext .columns .textcol.column1{width:40% !important}
