@@ -1395,6 +1395,9 @@ body.single-post {
     #main {
       width: 75%;
     }
+    h1.page-title {
+      color: $secondary;
+    }
     #single-post-widget {
       width: 25%;
       padding-left: 20px;

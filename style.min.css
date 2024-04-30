@@ -1533,6 +1533,7 @@ body.modal-open{overflow:hidden}
 #infscr-loading div{width:100%;margin-top:15px}
 body.single-post #primary{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;max-width:1400px;width:100%;margin:0 auto;padding-top:40px;padding-bottom:40px}
 body.single-post #primary #main{width:75%}
+body.single-post #primary h1.page-title{color:#0e1329}
 body.single-post #primary #single-post-widget{width:25%;padding-left:20px;border-left:1px solid #eaeaea}
 body.single-post #primary #single-post-widget h3{margin:0 0 20px;font-size:20px;font-weight:400;line-height:1.2}
 body.single-post #primary #single-post-widget ul{margin:0;padding:0;list-style:none}
