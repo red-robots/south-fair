@@ -939,6 +939,14 @@ body.single {
     margin-left: -20px;
     margin-right: -20px;
   }
+  .item-block {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    figure {
+      width: 100%;
+    }
+  }
   .photo {
     margin: 0 0;
     width: 50%;

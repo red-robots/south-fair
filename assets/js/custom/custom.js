@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
       // selector for the NEXT link (to page 2)
       nextSelector : "#pagination .next",
       // selector for all items you'll retrieve
-      itemSelector : ".entry",
+      itemSelector : ".item-block",
       // finished message
       loading: {
               img: assetsUrl + 'img/loader.svg',
