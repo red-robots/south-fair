@@ -946,6 +946,9 @@ body.single {
     figure {
       width: 100%;
     }
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
   }
   .photo {
     margin: 0 0;
