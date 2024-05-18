@@ -1375,6 +1375,10 @@ h6{font-size:28px}
 .main-navigation ul.menu-wrapper>li>a{padding:5px 10px;margin:0 15px;color:#231f20;font-family:"Poppins",sans-serif;font-size:15px;line-height:1.2;letter-spacing:.08em;text-transform:uppercase}
 .main-navigation ul.menu-wrapper li.current-menu-item>a,.main-navigation ul.menu-wrapper li.current_page_item>a,.main-navigation ul.menu-wrapper>li:hover>a,.main-navigation ul.menu-wrapper>li>a:hover,.main-navigation ul.menu-wrapper>li>a:focus{color:#0f6f39}
 .repeatable_section{color:#5a5a5a}
+.repeatable_section .narrow-wrapper{max-width:1100px;width:100%;margin:0 auto;padding:50px 20px}
+.repeatable_section .gform_wrapper.gravity-theme .ginput_address_city{width:50%;float:left;-webkit-box-flex:0;-ms-flex:none;flex:none}
+.repeatable_section .gform_wrapper.gravity-theme .ginput_address_state,.repeatable_section .gform_wrapper.gravity-theme .ginput_address_zip{width:25%;float:left;-webkit-box-flex:0;-ms-flex:none;flex:none}
+.repeatable_section .gform_wrapper.gravity-theme .ginput_complex input,.repeatable_section .gform_wrapper.gravity-theme .ginput_container_date input,.repeatable_section .gform_wrapper.gravity-theme .ginput_complex select,.repeatable_section .gform_wrapper.gravity-theme .gfield input.medium{border-radius:0;height:45px;border:1px solid #444}
 .repeatable_section a.link-white{color:#fff;text-decoration:underline}
 .repeatable_section a.link-white:hover,.repeatable_section a.link-white:focus{opacity:.5}
 .repeatable_section a.link-bright-green{color:#16d96b;text-decoration:underline}
@@ -1571,6 +1575,7 @@ body.has-hero-image.logged-in.admin-bar .site-header{top:35px}
 .subpage-content .section_fullwidth_content .textcol.text-left,.subpage-content .section_fullwidth_content .textcol.text-right{max-width:77vw}
 .subpage-content .section_fullwidth_content .textcol.text-left{text-align:left}
 .subpage-content .section_fullwidth_content .textcol.text-right{text-align:right}
+.gform_wrapper.gravity-theme .gform_page_footer{margin-top:20px}
 @media screen and (min-width:821px){.popupContainer .popupInner .team-info .rightcol{padding-top:30px}
 }@media screen and (min-width:1281px){.section_hero_static .textcol .inner{padding:5vw}
 .section_hero_static .textcol .inner p{font-size:2.2rem;letter-spacing:.2em}
@@ -1621,7 +1626,9 @@ body.single-post #primary #single-post-widget .recents-posts-widget{border-top:1
 .section_two_column_slant_alltext .columns .textcol.column2{padding:30px 30px !important}
 }@media screen and (max-width:820px){.team-info .details .flexwrap .leftcol,.team-info .details .flexwrap .rightcol{width:100% !important;padding-right:0;padding-left:0}
 .team-info .details .flexwrap .rightcol{margin-top:20px}
-}@media screen and (max-width:768px){.section_hero_static .textcol{width:100%;top:unset;bottom:0;height:auto}
+}@media screen and (max-width:768px){.repeatable_section .narrow-wrapper{padding:30px 0}
+.repeatable_section .gform_wrapper.gravity-theme .ginput_address_city,.repeatable_section .gform_wrapper.gravity-theme .ginput_address_state,.repeatable_section .gform_wrapper.gravity-theme .ginput_address_zip,.repeatable_section .gform_wrapper.gravity-theme .ginput_complex input,.repeatable_section .gform_wrapper.gravity-theme .ginput_container_date input,.repeatable_section .gform_wrapper.gravity-theme .ginput_complex select,.repeatable_section .gform_wrapper.gravity-theme .gfield input.medium{width:100% !important}
+.section_hero_static .textcol{width:100%;top:unset;bottom:0;height:auto}
 .section_hero_static .textcol .inner{padding-bottom:38px}
 .section_two_column_image_text .imagecol,.section_two_column_image_text .imagecol img,.section_two_column_image_text .textcol{width:100% !important;height:auto;position:relative;float:left}
 .section_two_column_image_text .textcol .inner{padding:50px 30px}

@@ -6,7 +6,6 @@
   float: left;
   box-sizing: border-box;
   clear: unset;
-  overflow: hidden;
 }
 .acf-field-flexible-content[data-name="flexible_content"] [data-label="Fullwidth Content"] [data-name="bgcolor"] {
   width: 60%;
