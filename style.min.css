@@ -1383,7 +1383,7 @@ h6{font-size:28px}
 .repeatable_section .textcol .button{min-width:200px}
 .repeatable_section .columns{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;min-height:40rem}
 .repeatable_section .section-title{margin:0 0 20px}
-.repeatable_section .button-wrap{margin-top:40px}
+.repeatable_section .button-wrap{margin-top:40px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.5em}
 .repeatable_section .button{display:inline-block;text-decoration:none;cursor:pointer;border:0;color:#fff;background:#0f6f39;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;line-height:1.2;padding:13px 25px 10px;border-radius:200px;min-width:150px;text-align:center;-webkit-box-shadow:4px 5px 10px rgba(0,0,0,.25);box-shadow:4px 5px 10px rgba(0,0,0,.25);-webkit-transition:all ease .3s;transition:all ease .3s}
 .repeatable_section .button:hover,.repeatable_section .button:focus{-webkit-transform:translateY(-2px);transform:translateY(-2px);-webkit-box-shadow:5px 8px 15px rgba(7,112,66,.2);box-shadow:5px 8px 15px rgba(7,112,66,.2);background:#fff;color:#0f6f39}
 .repeatable_section .button.darkblue{background:#0e1329;color:#fff}

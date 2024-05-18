@@ -213,13 +213,26 @@
       }
       $icon = get_sub_field('icon'); 
       $text = get_sub_field('textcontent'); 
+
+      $textcolor = (get_sub_field('textcolor')) ? get_sub_field('textcolor') : '#FFF'; 
+      $bgcolor = (get_sub_field('bgcolor')) ? get_sub_field('bgcolor') : '#CCC'; 
+      $button_bgcolor = get_sub_field('button_bgcolor');
+
+      //Button 1
       $button = get_sub_field('button'); 
       $btnLink = (isset($button['url']) && $button['url']) ? $button['url'] : '';
       $btnTitle = (isset($button['title']) && $button['title']) ? $button['title'] : '';
       $btnTarget = (isset($button['target']) && $button['target']) ? $button['target'] : '_self';
-      $textcolor = (get_sub_field('textcolor')) ? get_sub_field('textcolor') : '#FFF'; 
-      $bgcolor = (get_sub_field('bgcolor')) ? get_sub_field('bgcolor') : '#CCC'; 
-      $button_bgcolor = get_sub_field('button_bgcolor'); 
+
+      //Button 2
+      $button2 = get_sub_field('button2'); 
+      $btnLink2 = (isset($button2['url']) && $button2['url']) ? $button2['url'] : '';
+      $btnTitle2 = (isset($button2['title']) && $button2['title']) ? $button2['title'] : '';
+      $btnTarget2 = (isset($button2['target']) && $button2['target']) ? $button2['target'] : '_self';
+      $button_bgcolor2 = get_sub_field('button_bgcolor2');
+
+
+       
       if($text) { ?>
         <section id="section_fullwidth_content_<?php echo $i?>" class="repeatable_section section_fullwidth_content" style="background-color:<?php echo $bgcolor ?>;color:<?php echo $textcolor ?>;">
           <div class="wrapper">
@@ -231,9 +244,15 @@
                  </div> 
                 <?php } ?>
                 <div class="text"><?php echo anti_email_spam($text) ?></div>
-                <?php if($btnLink  && $btnTitle) { ?>
+                <?php if( ($btnLink  && $btnTitle) || ($btnLink2  && $btnTitle2) ) { ?>
                 <div class="button-wrap">
-                  <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button <?php echo $button_bgcolor; ?>"><?php echo $btnTitle ?></a>
+                  <?php if ($btnLink  && $btnTitle) { ?>
+                    <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button <?php echo $button_bgcolor; ?>"><?php echo $btnTitle ?></a>
+                  <?php } ?>
+                  
+                  <?php if ($btnLink2  && $btnTitle2) { ?>
+                    <a href="<?php echo $btnLink2 ?>" target="<?php echo $btnTarget2 ?>" class="button <?php echo $button_bgcolor2; ?>"><?php echo $btnTitle2 ?></a>
+                  <?php } ?>
                 </div>
                 <?php } ?>
               </div>

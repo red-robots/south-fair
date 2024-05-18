@@ -200,6 +200,10 @@ h6 {font-size: 28px;}
   }
   .button-wrap {
     margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
   }
   .button {
     display: inline-block;
