@@ -1575,7 +1575,7 @@ body.has-hero-image.logged-in.admin-bar .site-header{top:35px}
 .subpage-content .section_fullwidth_content .textcol.text-left,.subpage-content .section_fullwidth_content .textcol.text-right{max-width:77vw}
 .subpage-content .section_fullwidth_content .textcol.text-left{text-align:left}
 .subpage-content .section_fullwidth_content .textcol.text-right{text-align:right}
-.gform_wrapper.gravity-theme .gform_page_footer{margin-top:20px}
+.gform_wrapper.gravity-theme .gform_page_footer{margin-top:20px !important}
 @media screen and (min-width:821px){.popupContainer .popupInner .team-info .rightcol{padding-top:30px}
 }@media screen and (min-width:1281px){.section_hero_static .textcol .inner{padding:5vw}
 .section_hero_static .textcol .inner p{font-size:2.2rem;letter-spacing:.2em}
