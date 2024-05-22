@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
     },
     on: {
       slideChange: function () {
-        console.log("do something...");
+        //console.log("do something...");
       }
     }
   });

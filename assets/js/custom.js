@@ -85,8 +85,7 @@ jQuery(document).ready(function ($) {
       prevEl: ".swiper-button-prev"
     },
     on: {
-      slideChange: function slideChange() {
-        console.log("do something...");
+      slideChange: function slideChange() {//console.log("do something...");
       }
     }
   });
