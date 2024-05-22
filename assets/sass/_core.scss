@@ -471,6 +471,12 @@ h6 {font-size: 28px;}
           }
         }
       }
+
+      .swiper-button-prev,
+      .swiper-button-next,
+      .swiper-pagination {
+        display: none!important;
+      }
     }
   }
 }
