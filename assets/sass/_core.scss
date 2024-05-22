@@ -445,11 +445,9 @@ h6 {font-size: 28px;}
             left: 0;
             object-fit: cover;
             object-position: center;
-            transform: scale(1.1);
-            opacity: 0.95;
-            transition-duration: 5s;
-            transition: all ease 2s;
-            perspective: 0;
+            transform: scale(1);
+            opacity: 1;
+            transition-duration: 25s;
           }
           &.swiper-slide-active {
             img {
@@ -458,7 +456,17 @@ h6 {font-size: 28px;}
               transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
               transform: translateX(4%) scale(1.35);
               perspective: 0px;
-              opacity: 1!important;
+              opacity: 1;
+            }
+          }
+
+          &:nth-child(even) {
+            transform: translateX(0)  scale(1.5);
+            transition-duration: 25s;
+            &.swiper-slide-active img {
+              transform-origin: bottom center;
+              transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+              transform: translateX(-5%) scale(1.2);
             }
           }
         }
