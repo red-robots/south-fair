@@ -435,6 +435,10 @@ h6 {font-size: 28px;}
           height: 100%;
           position: relative;
           overflow: hidden;
+          transition-duration: 2s!important;
+          &.first {
+            transform: scale(1.5);
+          }
           img {
             -webkit-backface-visibility: hidden;
             display: block;
@@ -445,16 +449,23 @@ h6 {font-size: 28px;}
             left: 0;
             object-fit: cover;
             object-position: center;
-            transform: scale(1);
-            opacity: 1;
             transition-duration: 25s;
+            transition-timing-function: ease-in-out;
+            transform: translateX(3%) scale(1.15);
+            transition-duration: 20s!important;
+            opacity: 1;
           }
+
+
           &.swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            transition-duration: 1s!important;
             img {
               transform-origin: center center;
-              transition-duration: 20s;
+              transition-duration: 20s!important;
               transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-              transform: translateX(4%) scale(1.35);
+              transform: translateX(4%) scale(1.5);
               perspective: 0px;
               opacity: 1;
             }

@@ -25,11 +25,11 @@
                 <div class="imagecol imageSlideshow">
                   <div id="slideshow" class="swiper">
                     <div class="swiper-wrapper">
-                      <?php foreach ($hero_slideshow as $img) { ?>
-                        <figure class="swiper-slide">
+                      <?php $sw=1; foreach ($hero_slideshow as $img) { ?>
+                        <figure class="swiper-slide<?php echo ($sw==1) ? ' first':''; ?>">
                           <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
                         </figure>
-                      <?php } ?>
+                      <?php $sw++; } ?>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev"></div>

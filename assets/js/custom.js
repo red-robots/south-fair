@@ -72,7 +72,7 @@ jQuery(document).ready(function ($) {
     loop: true,
     noSwiping: true,
     simulateTouch: true,
-    speed: 2000,
+    speed: 2500,
     autoplay: {
       delay: 4000
     },
@@ -85,7 +85,13 @@ jQuery(document).ready(function ($) {
       prevEl: ".swiper-button-prev"
     },
     on: {
-      slideChange: function slideChange() {//console.log("do something...");
+      slideChange: function slideChange(e) {// $('.imageSlideshow .swiper-slide').each(function(){
+        //   if( $(this).hasClass('swiper-slide-active') ) {
+        //     $(this).removeClass('goAnimate');
+        //   } else {
+        //     $(this).addClass('goAnimate');
+        //   }
+        // });
       }
     }
   });
